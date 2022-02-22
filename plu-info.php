@@ -1,4 +1,5 @@
 <?php
+managerLogin();
 
 /*
  * Function to display items in inventory
@@ -9,21 +10,20 @@ function displayItems()
 }
 
 /*
- * Store manager login info
+ * Store manager login authentication
  */
 function managerLogin()
 {
-    $userIn = $_POST['code'];
+    $userIn = $_POST['passcode'];
 
-    if (isset($_POST['login']) && !empty($_POST['code'])) {
-        if ($_POST['code'] == '1234') {
-            header('Refresh: 2; URL = plu-menu.html');
+    if (isset($_POST['login']) && !empty($_POST['passcode'])) {
+        if ($_POST['passcode'] == '1234') { // Enter correct passcode
+            header('Refresh: 2; URL = plu-menu.php'); // Correct: Redirect to menu
         }else {
-            header('Refresh: 2; URL = manager-page.html');
+            header('Refresh: 2; URL = manager-page.php'); // Incorrect: Redirect back to login
             exit;
         }
     }
-//    echo $userIn . "</br>";
 }
 
 /*
@@ -33,10 +33,4 @@ function addItems()
 {
     $itemName = $_POST['name']; // Item name input saved
     $pluNum = $_POST['number']; // PLU code input saved
-
 }
-
-displayItems();
-managerLogin();
-
-?>

@@ -1,13 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
-<title>Produce Lookup Codes</title>
+<title>Add Items</title>
 <body>
-<b>Add item to inventory.</b>
-
+<h3>Add item to inventory:</h3>
 <form action="plu-info.php" method="post">
-
     <table border="0">
-
         <tr>
             <td>Item Name:</td>
             <td align="center"><input type="text" name="name" size="30" /></td>
@@ -21,11 +17,14 @@
         <tr>
             <td colspan="1" align="center"><input type="submit" value="Submit"/></td>
         </tr>
-
     </table>
 </form>
 
-<!--<a href="manager-page.html"><button colspan="2" type="submit">Manager Login</button></a>-->
+<form action="manager-page.php" method="post">
+    <input colspan="1" type="submit" value="Back to Home">
+</form>
+
+<!--<a href="manager-page.php"><button colspan="2" type="submit">Manager Login</button></a>-->
 
 </body>
 </html>
