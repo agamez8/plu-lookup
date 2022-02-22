@@ -14,13 +14,14 @@ function displayItems()
  */
 function managerLogin()
 {
-    $userIn = $_POST['passcode'];
+
+    $userIn = $_POST['passcode']; // User input
 
     if (isset($_POST['login']) && !empty($_POST['passcode'])) {
-        if ($_POST['passcode'] == '1234') { // Enter correct passcode
-            header('Refresh: 2; URL = plu-menu.php'); // Correct: Redirect to menu
+        if ($userIn == '1234') { // Enter correct passcode
+            header('Refresh: 2; URL = plu-menu.php'); // Correct: Open menu
         }else {
-            header('Refresh: 2; URL = manager-page.php'); // Incorrect: Redirect back to login
+            header('Refresh: 2; URL = manager-page.php'); // Incorrect: Redirect back to login page
             exit;
         }
     }
